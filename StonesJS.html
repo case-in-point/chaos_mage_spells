@@ -3,14 +3,20 @@
 <html>
 <body>
 
-<h2>Chaos Mage spell selection</h2>
+<h2>Chaos Mage Spell Selection</h2>
+
+<h3>Spell Type:</h3>
 
 <p id="spellType">Click the button for first spell type.</p>
 
 <button type="button" onclick ="nextSpell()">Next spell type</button>
 
+<h3>Available Spells:</h3>
+<p id="spellText">Spell text.</p>
+<!-- Spells will eventually go here -->
+
 <script>
-var SPELL_DATA = ["Attack","Attack","Defense","Defense","Icon","Icon"];
+var SPELL_DATA = ["Attack","Attack.","Defense","Defense.","Icon","Icon."];
 var stones = [];
 
 function resetStones() {
