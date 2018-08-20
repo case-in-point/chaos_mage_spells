@@ -12,12 +12,17 @@
 <button type="button" onclick ="nextSpell()">Next spell type</button>
 
 <h3>Available Spells:</h3>
-<p id="spellText">Spell text.</p>
+<p id="spellText"></p>
 <!-- Spells will eventually go here -->
 
 <script>
 var SPELL_DATA = ["Attack","Attack.","Defense","Defense.","Icon","Icon."];
 var stones = [];
+var ATTACK = ["Force Tentacle", "Chaos Ray", "Blarrrrgh!"];
+var DEFENSE = ["Chaos Blessing", "Warped Healing"];
+var ICON = ["Archmage", "Crusader", "Diabolist", "Dwarf King", "Elf Queen",
+    "Great Gold Wyrm", "High Druid", "Lich King", "Orc Lord", "Priestess",
+    "Prince of Shadows", "The Three"];
 
 function resetStones() {
     stones = SPELL_DATA.slice(0);
@@ -35,7 +40,19 @@ function nextSpell() {
     if (stones.length <= 1) {
         resetStones();
     }
-    document.getElementById("spellType").innerHTML = stones.pop();
+    var type = stones.pop();
+    document.getElementById("spellType").innerHTML = type;
+    displaySpells(type);
+}
+
+function displaySpells(type) {
+    if (type.includes("Attack")) {
+        document.getElementById("spellText").innerHTML = ATTACK;
+    } else if (type.includes("Defense")) {
+        document.getElementById("spellText").innerHTML = DEFENSE;
+    } else {
+        document.getElementById("spellText").innerHTML = ICON;
+    }
 }
 </script>
 
