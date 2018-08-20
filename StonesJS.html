@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<body>
+
+<h2>Chaos Mage spell selection</h2>
+
+<p id="spellType">Click the button for first spell type.</p>
+
+<button type="button" onclick ="nextSpell()">Next spell type</button>
+
+<script>
+var SPELL_DATA = ["Attack","Attack","Defense","Defense","Icon","Icon"];
+var stones = [];
+
+function resetStones() {
+    stones = SPELL_DATA.slice(0);
+    //shuffle
+    for (var i = stones.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = stones[i];
+        stones[i] = stones[j];
+        stones[j] = temp;
+    }
+}
+
+function nextSpell() {
+    //reset the array when there's one left
+    if (stones.length <= 1) {
+        resetStones();
+    }
+    document.getElementById("spellType").innerHTML = stones.pop();
+}
+</script>
+
+</body>
+</html>
