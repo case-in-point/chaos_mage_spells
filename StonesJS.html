@@ -3,14 +3,582 @@
 <html>
 <body>
 
-<h2>Chaos Mage spell selection</h2>
+<h1>Chaos Mage Spell Selection</h1>
 
-<p id="spellType">Click the button for first spell type.</p>
+<h2>Random Spell Type:</h2>
+
+<h3 id="spellType" style="color:blue">Click the button for first spell type.
+</h3>
 
 <button type="button" onclick ="nextSpell()">Next spell type</button>
 
+<h4 id="randIcon" style="color:blue;display:none"></h4>
+
+<h2>Available Spells:</h2>
+
+<section id="attack" style="display:none">
+<h4>Force Tentacle</h4>
+<p>Ranged Spell <span style="font-weight:bold">* At Will</span><br>
+<span style="font-weight:bold">Target:</span> One random nearby enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 1d10 + Charisma force damage<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level<br><br>
+3rd level spell&emsp;&emsp;3d10 damage<br>
+5th level spell&emsp;&emsp;5d10 damage<br>
+7th level spell&emsp;&emsp;7d10 damage<br>
+9th level spell&emsp;&emsp;9d10 damage<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> You can now target
+far away enemies.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> This spell's damage
+dice increase by one size to d12s.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> One battle per day, you
+can deal half damage on a natural even miss with this spell.<br><br>
+</p>
+
+<h4>Chaos Ray</h4>
+<p>Ranged spell <span style="font-weight:bold">* Once per battle</span><br>
+<span style="font-weight:bold">Target:</span> One nearby or far away enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 1d8 + Charisma damage<br>
+<span style="font-weight:bold">Natural Even Hit:</span>
+As a hit, plus another nearby enemy takes half damage.<br>
+<span style="font-weight:bold">Miss:</span> 1d6 damage to a different nearby
+enemy.<br><br>
+3rd level spell&emsp;&emsp;4d6 damage&emsp;&emsp;1d10 damage on a miss.<br>
+5th level spell&emsp;&emsp;6d6 damage&emsp;&emsp;2d12 damage on a miss.<br>
+7th level spell&emsp;&emsp;6d10 damage&emsp;&emsp;3d12 damage on a miss.<br>
+9th level spell&emsp;&emsp;8d10 damage&emsp;&emsp;5d12 damage on a miss.<br><br>
+</p>
+
+<h4>Blarrrrgh!</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Targets:</span> 1d6 nearby enemies<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span>
+3d6 + Charisma damage, and roll a d4 for the effect (same damage for all targets
+but a separate effect for each one).<br>
+&nbsp;1:  The target is dazed (save ends).<br>
+&nbsp;2:  The target is weakened (save ends).<br>
+&nbsp;3:  The target is hampered until the end of your next turn.<br>
+&nbsp;4:  The target is confused until the end of your next turn.<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+3rd level spell&emsp;&emsp;6d6 damage.<br>
+5th level spell&emsp;&emsp;6d10 damage.<br>
+7th level spell&emsp;&emsp; 10d10 damage.<br>
+9th level spell&emsp;&emsp;2d8 x 10 damage.<br><br>
+</p>
+</section>
+
+<section id="defense" style="display:none">
+<h4>Chaos Blessing</h4>
+<p>Close-quarters spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Effect:</span>
+Roll a d20 to determine which effect the blessing grants.
+Higher-level versions of the spell improve the first three
+blessings, but you still get only the blessing you roll.<br>
+<span style="font-weight:bold">1–4:</span> Gift — You or one of your nearby
+allies gains 7 temporary hit points.<br>
+<span style="font-weight:bold">5–8:</span> Resilience — You gain 7 temporary hit
+points.<br>
+<span style="font-weight:bold">9–12:</span> Aura/tentacles — The next enemy that
+moves to engage you this battle takes 2d6 damage.<br>
+<span style="font-weight:bold">13–16:</span> Defense bonus — You gain a +2 bonus
+to the defense of your choice (AC, PD, or MD) until an attack against that
+defense misses you or until the end of the battle.<br>
+<span style="font-weight:bold">17–20:</span> Healing — You or your nearby ally
+with the fewest hit points can heal using a recovery. (If you’re the one with
+the fewest hit points among you and your nearby allies, it’s you.)<br><br>
+3rd level spell&emsp;&emsp;gift and resilience now grant 12 temporary hit points;
+aura/tentacles damage is 2d10.<br>
+5th level spell&emsp;&emsp;gift and resilience now grant 20 temporary hit points;
+aura/tentacles damage is 4d10.<br>
+7th level spell&emsp;&emsp;gift and resilience now grant 35 temporary hit points;
+aura/tentacles damage is 6d8.<br>
+9th level spell&emsp;&emsp;gift and resilience now grant 60 temporary hit points;
+aura/tentacles damage is 10d8.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> The defense bonus
+effect now applies to all the target’s defenses (and therefore ends as soon as
+the target is missed by an attack).<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> A number of times
+per day equal to your highest non-Charisma modifier, you can roll twice when you
+cast chaos blessing and gain both effects (reroll a duplicate result).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> The damage dice for the
+aura/tentacles effect increase by one size (for example, d8s to d10s).<br><br>
+</p>
+
+<h4>Warped Healing</h4>
+<p>Close-quarters spell <span style="font-weight:bold">* Once per battle</span>
+<br>
+<span style="font-weight:bold">Targets:</span> Two nearby allies, or you and one
+nearby ally<br>
+<span style="font-weight:bold">Effect:</span> Randomly choose one of the
+targets. That target can heal using a recovery. The other target gains 10
+temporary hit points and grows a strange eye, limb, or other physical feature
+that lasts as long as the temporary hit points do.<br><br>
+3rd level spell&emsp;&emsp;20 temporary hit points.<br>
+5rd level spell&emsp;&emsp;30 temporary hit points.<br>
+7rd level spell&emsp;&emsp;45 temporary hit points.<br>
+9rd level spell&emsp;&emsp;70 temporary hit points.<br><br>
+</p>
+</section>
+
+<section id="icon" style="display:none">
+
+<h3>Archmage (Light of the High Ones)</h3>
+
+<h4>Silver Arrows (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Targets:</span> 1d3 nearby enemies<br>
+<span style="font-weight:bold">Effect:</span> The target takes 4 force damage.
+<br><br>
+3rd level spell&emsp;&emsp;7 damage.<br>
+5th level spell&emsp;&emsp;10 damage.<br>
+7th level spell&emsp;&emsp;14 damage.<br>
+9th level spell&emsp;&emsp;27 damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> This spell now
+targets 1d4 nearby or far away enemies.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> This spell now
+targets 1d6 nearby or far away enemies.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> This spell now targets a
+number of nearby or far away enemies equal to the escalation die.<br><br>
+</p>
+
+<h4>Cascading Power (5th level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Targets:</span> A number of random nearby
+creatures equal to the escalation die<br>
+<span style="font-weight:bold">Effect:</span> The targets are embroiled in
+silver fire! Each targeted ally can roll an immediate easy save (6+); if that
+ally succeeds, they regain one daily or recharge power of their choice. Then
+each targeted enemy takes damage equal to 1d10 x the escalation die. After the
+damage, roll the escalation die and use the new result.<br><br>
+7th level spell&emsp;&emsp;Damage equal to 2d6 x the escalation die.<br>
+9th level spell&emsp;&emsp;Damage equal to 2d12 x the escalation die.<br><br>
+</p>
+
+<h3>Crusader (Blood of Warriors)</h3>
+
+<h4>Castigation (1st level+)</h4>
+<p>Close-quarters spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One enemy you are engaged with if
+possible; if not, then one nearby enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. MD<br>
+<span style="font-weight:bold">Hit:</span> 1d8 + Charisma psychic damage<br>
+<span style="font-weight:bold">Hit vs. a Staggered Target:</span> As a hit,
+except there is no damage roll; the target takes maximum damage.<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+3rd level spell&emsp;&emsp;3d6 damage.<br>
+5th level spell&emsp;&emsp;5d6 damage.<br>
+7th level spell&emsp;&emsp;5d8 damage.<br>
+9th level spell&emsp;&emsp;6d10 damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> When you hit a
+demon with this spell, it’s also hampered (save ends).<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The damage dice for
+the spell increase by one size (for example, d6s to d8s).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> The spell now deals half
+damage on a miss.<br><br>
+</p>
+
+<h4>Terribly Spiky Armor (3rd level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Effect:</span> Until the end of the battle, you
+gain a +3 bonus to AC and when an enemy engaged with you misses you with an
+attack, it takes 3d6 + Charisma damage.<br><br>
+5th level spell&emsp;&emsp;5d6 damage.<br>
+7th level spell&emsp;&emsp;5d8 damage.<br>
+9th level spell&emsp;&emsp;7d10 damage.<br><br>
+</p>
+
+<h3>Diabolist (Twisted Path)</h3>
+
+<h4>Tortured Scream (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One nearby enemy<br>
+<span style="font-weight:bold">Special:</span> When you cast the spell, you or a
+willing nearby ally of your choice loses 1d6 hit points.<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. MD<br>
+<span style="font-weight:bold">Hit:</span> 3d6 + Charisma psychic damage.<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+3rd level spell&emsp;&emsp;6d6 damage&emsp;&emsp;you or ally loses 2d6 hit
+points.<br>
+5th level spell&emsp;&emsp;6d10 damage&emsp;&emsp;you or ally loses 4d6 hit
+points.<br>
+7th level spell&emsp;&emsp;10d10 damage&emsp;&emsp;you or ally loses 6d6 hit
+points.<br>
+9th level spell&emsp;&emsp;2d8 x 10 damage&emsp;&emsp;you or ally loses 8d6 hit
+points.
+<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> The spell now
+deals half damage on a miss.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> You or an ally now
+lose one less die of hit points (for example, 3d6 instead of 4d6).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> The first time each
+battle you miss with this spell, if the escalation die is 3+, you can reroll the
+attack by having you or your ally lose the same amount of hit points again.<br>
+<br>
+</p>
+
+<h4>Trace of Corruption (1 st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Target:</span> You or one nearby ally; the target
+must have a positive or conflicted relationship with a villainous icon<br>
+<span style="font-weight:bold">Effect:</span> The target rolls a save against
+each save ends effect affecting it. Then the target can heal using a recovery
+from a nearby ally (target’s choice, even if that ally isn’t willing).<br><br>
+</p>
+
+<h3>Dwarf King (Blood of Warriors)</h3>
+
+<h4>Yours! (1 st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> You or one ally in the battle,
+chosen randomly<br>
+<span style="font-weight:bold">Effect:</span> Roll a d20.<br>
+&ensp;1–10:&ensp;The target can heal using a recovery.<br>
+&nbsp;11–20:&ensp;The target can make a basic attack as a free action.<br><br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> When this spell
+allows a target to attack, the attack deals half damage on a miss instead of
+normal miss damage.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The target can move
+as a free action before using a recovery or attacking.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> When the target heals
+using a recovery, it adds hit points equal to 1d10 x the escalation die to that
+healing.<br><br>
+</p>
+
+<h4>Ours! (1 st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Target:</span> One nearby ally<br>
+<span style="font-weight:bold">Effect:</span> The target can heal using a free
+recovery, adding hit points equal to 1d6 x the escalation die to that healing.
+Unless you or the target is a dwarf, randomly choose one of the target’s true
+magic items. You actively gain that item’s quirk until the end of the day.<br>
+<br>
+</p>
+
+<h3>Elf Queen (Light of the High Ones)</h3>
+
+<h4>Shards of Magic (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One nearby or far away enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Natural Even Hit:</span> 1d6 + Charisma force
+damage, and you can roll a hard save (16+). If you succeed, you get an extra
+standard action this turn.<br>
+<span style="font-weight:bold">Natural Odd Hit:</span> 7 ongoing damage.<br>
+<span style="font-weight:bold">Natural Even Miss:</span> You can teleport to a
+nearby location you can see as a free action.<br><br>
+3rd level spell&emsp;&emsp;Even hit: 3d6 damage&emsp;&emsp;Odd hit: 10 ongoing
+damage.<br>
+5th level spell&emsp;&emsp;Even hit: 5d6 damage&emsp;&emsp;Odd hit: 18 ongoing
+damage.<br>
+7th level spell&emsp;&emsp;Even hit: 5d8 damage&emsp;&emsp;Odd hit: 28 ongoing
+damage.<br>
+9th level spell&emsp;&emsp;Even hit: 7d10 damage&emsp;&emsp;Odd hit: 40 ongoing
+damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> A natural odd miss
+now deals damage equal to your level.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> A natural odd miss
+now deals half the force damage an even hit would have dealt.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> A natural even miss now
+allows you to teleport to a far away location you can see as a free action.<br>
+<br>
+</p>
+
+<h4>Coronation (3rd level+)</h4>
+<p>Close-quarters spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Effect:</span> Until the end of the battle, when
+a staggered enemy hits you with an attack, you can make the following attack
+against that enemy as a free action after the attack.<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. MD<br>
+<span style="font-weight:bold">Hit:</span> The target is confused until the end
+of its next turn.<br><br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> Once per battle when
+a staggered enemy misses you with an attack while this spell’s effect is active,
+you can make the attack against that enemy.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> When you make a natural
+even roll with a coronation attack, you can have the target become confused
+(save ends) instead of taking damage.<br><br>
+</p>
+
+<h3>Great Gold Wyrm (Blood of Warriors)</h3>
+
+<h4>Fiery Claw (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Special:</span> This spell attack ignores all the
+target’s resistances.<br>
+<span style="font-weight:bold">Target:</span> One nearby enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 1d8 + Charisma fire damage, and the
+target loses its resist damage abilities, if any (hard save ends, 16+).<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+3rd level spell&emsp;&emsp;3d8 damage.<br>
+5th level spell&emsp;&emsp;5d8 damage.<br>
+7th level spell&emsp;&emsp;7d8 damage.<br>
+9th level spell&emsp;&emsp;9d8 damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> This spell can now
+deal holy damage instead of fire damage.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The damage dice for
+this spell increase from d8s to d10s.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> This spell now deals half
+damage on a miss.<br><br>
+</p>
+
+<h4>Final Wrath (5th level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Targets:</span> 1d4 nearby enemies in a group<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 7d6 + Charisma fire damage.<br>
+<span style="font-weight:bold">Natural Even Hit:</span> As a hit, plus if the
+target is staggered after the attack, it’s also stunned until the end of its
+next turn.<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+7th level spell&emsp;&emsp;9d10 damage.<br>
+9th level spell&emsp;&emsp;2d6 x 10 damage.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> This spell now deals
+half damage on a miss.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> This spell now targets
+2d3 enemies in a group.<br><br>
+</p>
+
+<h3>High Druid (Light of the High Ones)</h3>
+
+<h4>Bolt and Thunder (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One nearby enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 1d4 + Charisma lightning damage, and a
+different random nearby enemy takes the same amount of thunder damage.<br><br>
+3rd level spell&emsp;&emsp;2d6 damage.<br>
+5th level spell&emsp;&emsp;3d6 damage.<br>
+7th level spell&emsp;&emsp;5d6 damage.<br>
+9th level spell&emsp;&emsp;5d8 damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> This spell now
+deals damage equal to your level on a miss.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The damage dice for
+this spell increase by one size (for example, from 3d6 to 3d8).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> This spell now deals half
+damage on a miss.<br><br>
+</p>
+
+<h4>The Final Surge (3rd level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Effect:</span> You and each of your nearby allies
+each heal hit points equal to 1d6 x the number of recoveries that character has
+expended this day. (And no, free recoveries don’t count; this spell only counts
+the resources you’ve expended.)<br><br>
+5th level spell&emsp;&emsp;1d10 x the number of recoveries.<br>
+7th level spell&emsp;&emsp;2d6 x the number of recoveries.<br>
+9th level spell&emsp;&emsp;2d10 x the number of recoveries.<br><br>
+</p>
+
+<h3>Lich King (Twisted Path)</h3>
+
+<h4>Evil Touch (1st level+)</h4>
+<p>Close-quarters spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One enemy engaged with you<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 1d10 + Charisma negative energy
+damage.<br>
+<span style="font-weight:bold">Natural Even Hit:</span> As a hit, plus you gain
+5 temporary hit points if the target drops to 0 hp during the battle.<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+3rd level spell&emsp;&emsp;3d10 damage 8 temporary hit points.<br>
+5th level spell&emsp;&emsp;5d10 damage 10 temporary hit points.<br>
+7th level spell&emsp;&emsp;7d10 damage 15 temporary hit points.<br>
+9th level spell&emsp;&emsp;9d10 damage 25 temporary hit points.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> This spell now
+deals half damage on a miss.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> When the target drops
+to 0 hp, instead of gaining temporary hit points, you can choose to deal that
+amount of negative energy damage to one nearby enemy as a free action.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> This spell can now target
+a nearby enemy.<br><br>
+</p>
+
+<h4>Unsummoning (7th level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Target:</span> One nearby non-undead enemy that
+the GM hasn’t given a proper name, or that doesn’t play a key role in the
+current storyline<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. MD<br>
+<span style="font-weight:bold">Hit:</span> The target is sent elsewhere,
+possibly to a location that’s close enough for the PCs to have to deal with it
+in a subsequent battle. It might also go somewhere “interesting.” See the
+sidebar below if you feel like rolling for it, GM. Replace the target with the
+GM’s choice of an undamaged and hostile undead creature that is one level lower
+than the original target. If the target was a large or double-strength creature,
+the replacement must be large or double-strength, or perhaps two normal undead
+instead of one show up. Ditto for huge/triple-strength targets. Therefore you’re
+only slightly reducing the raw power of the opposition; the advantage of using
+the spell is that you’re getting rid of an enemy you match up badly against and
+dropping the level of the opposition by one. The disadvantage, of course, is
+that you’ll probably have to face that enemy again.<br>
+<span style="font-weight:bold">Miss:</span> 7d10 + Charisma psychic damage.<br>
+<br>
+9th level spell&emsp;&emsp;8d10 + Charisma psychic damage on a miss.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> This spell can now
+also target an entire mob of mooks. If the attack hits, replace them with a mob
+of undead mooks that is one level lower.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> You don’t expend the
+spell when you miss with it.<br><br>
+</p>
+
+<h3>Orc Lord (Blood of Warriors)</h3>
+
+<h4>War Drums (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Effect:</span> The next natural odd attack roll
+you or one of your allies makes this battle that hits an enemy deals 13 extra
+damage.<br><br>
+3rd level spell&emsp;&emsp;23 extra damage.<br>
+5th level spell&emsp;&emsp;33 extra damage.<br>
+7th level spell&emsp;&emsp;53 extra damage.<br>
+9th level spell&emsp;&emsp;83 extra damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> Add your Charisma
+modifier to the extra damage (double your Charisma modifier at 5 th level;
+triple it at 8th level).<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> When you cast this
+spell, each nearby enemy that’s staggered also takes 2d6 thunder damage
+(4d6 thunder damage at 8th level).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> When this spell’s effect
+deals the extra damage, you can roll a hard save (16+). If you succeed, the war
+drums keep beating and the effect extends to the next natural odd hit this
+battle! (And so on if you keep succeeding.)<br><br>
+</p>
+
+<h4>Savage Endings (3rd level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Targets:</span> Each nearby creature that’s
+staggered (yes, including allies, even those who are dying)<br>
+<span style="font-weight:bold">Effect:</span> Each target takes 5d6 + Charisma
+damage.<br><br>
+5th level spell&emsp;&emsp;5d8 damage.<br>
+7th level spell&emsp;&emsp;7d10 damage.<br>
+9th level spell&emsp;&emsp;10d10 damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> The spell no longer
+targets your allies.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The spell’s damage
+dice increase by one size (for example, d10s to d12s).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> When you drop one or more
+non-mook creatures to 0 hp with this spell, you can heal using a free recovery.
+<br><br>
+</p>
+
+<h3>Priestess (Light of the High Ones)</h3>
+
+<h4>Holy Spark (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One nearby enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Hit:</span> 1d8 + Charisma holy damage, and one
+nearby ally gains 3 temporary hit points.<br>
+<span style="font-weight:bold">Miss:</span> Damage equal to your level.<br><br>
+3rd level spell&emsp;&emsp;3d8 damage&emsp;&emsp;5 temporary hit points.<br>
+5th level spell&emsp;&emsp;5d8 damage&emsp;&emsp;8 temporary hit points.<br>
+7th level spell&emsp;&emsp;7d8 damage&emsp;&emsp;10 temporary hit points.<br>
+9th level spell&emsp;&emsp;9d8 damage&emsp;&emsp;15 temporary hit points.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> When you miss with
+the spell, one of your nearby allies now gains the temporary hit points.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> This spell now deals
+half damage on a miss.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> You can now target a far
+away enemy with this spell. In addition, the spell’s damage dice increase by one
+size from d8s to d10s.<br><br>
+</p>
+
+<h4>Temple Bells (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Targets:</span> You and each nearby ally that has
+10 hp or fewer<br>
+<span style="font-weight:bold">Effect:</span> The target can heal using a
+recovery.<br><br>
+3rd level spell&emsp;&emsp;Target with 20 hp or fewer.<br>
+5th level spell&emsp;&emsp;Target with 40 hp or fewer.<br>
+7th level spell&emsp;&emsp;Target with 60 hp or fewer.<br>
+9th level spell&emsp;&emsp;Target with 100 hp or fewer.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> One target that
+heals can also roll a save against a save ends effect.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The recovery is now
+free.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> Add 50 hp to the hit
+point threshold for targets that can be affected.<br><br>
+</p>
+
+<h3>Prince of Shadows (Twisted Path)</h3>
+
+<h4>Shadow Dance (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Targets:</span> Two nearby creatures, enemies or
+allies (including you)<br>
+<span style="font-weight:bold">Effect:</span> The targets teleport and swap
+places. Each teleported enemy takes 1d6 damage. You and your allies don’t take
+damage from teleporting.<br><br>
+3rd level spell&emsp;&emsp;2d6 damage.<br>
+5th level spell&emsp;&emsp;2d10 damage.<br>
+7th level spell&emsp;&emsp;3d12 damage.<br>
+9th level spell&emsp;&emsp;4d12 damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> Once per day, one
+or more targets of the spell can be far away.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> The damage increases
+by one die (for example, 2d10 becomes 3d10).<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> The spell can now target
+up to three nearby creatures.<br><br>
+</p>
+
+<h4>Step into Shadow (3rd level+)</h4>
+<p>Close-quarters spell <span style="font-weight:bold">* Once per battle</span>
+<br>
+<span style="font-weight:bold">Effect:</span> Remove yourself from the battle
+(you can’t be targeted by attacks or effects while in the shadows). At the start
+of your next turn, return to the battle nearby your previous location and roll a
+d6 to determine a random benefit you gain from coming out of the shadows.<br>
+&nbsp;1–4: You can heal using a recovery.<br>
+&nbsp;5+: You deal double damage to the first target you hit with a chaos mage
+spell this turn.<br><br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> You can choose to add
++1 to the d6 roll after seeing it.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> If you roll 6+, you gain
+both effects.<br><br>
+</p>
+
+<h3>The Three (Twisted Path)</h3>
+
+<h4>Twisted beam (1st level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* At-Will</span><br>
+<span style="font-weight:bold">Target:</span> One nearby enemy<br>
+<span style="font-weight:bold">Attack:</span> Charisma + Level vs. PD<br>
+<span style="font-weight:bold">Natural Even Hit:</span> 1d6 + Charisma fire
+damage.<br>
+<span style="font-weight:bold">Natural Odd Hit:</span> Lightning damage equal to
+half the damage from a natural even hit, and you can roll another twisted beam
+attack against an enemy you haven’t targeted with it this turn.<br>
+<span style="font-weight:bold">Natural Even Miss:</span> 3 ongoing acid damage.
+<br><br>
+3rd level spell&emsp;&emsp;3d6 damage&emsp;&emsp;6 ongoing damage.<br>
+5th level spell&emsp;&emsp;5d6 damage&emsp;&emsp;9 ongoing damage.<br>
+7th level spell&emsp;&emsp;7d8 damage&emsp;&emsp;12 ongoing damage.<br>
+9th level spell&emsp;&emsp;9d8 damage&emsp;&emsp;18 ongoing damage.<br>
+<span style="font-weight:bold">&ensp;Adventurer Feat:</span> This spell can now
+target far away enemies.<br>
+<span style="font-weight:bold">&ensp;Champion Feat:</span> A natural odd miss
+now deals half natural even hit damage.<br>
+<span style="font-weight:bold">&ensp;Epic Feat:</span> The first save against
+the ongoing damage from a natural even miss is a hard save (16+). The second and
+subsequent saves are normal.<br><br>
+</p>
+
+<h4>Ancient Scales (3rd level+)</h4>
+<p>Ranged spell <span style="font-weight:bold">* Daily</span><br>
+<span style="font-weight:bold">Effect:</span> Until the end of the battle, you
+have flight while the escalation die is even. While the escalation die is odd,
+you can cast twisted beam once during your turn as a quick action.<br><br>
+</p>
+
+</section>
+
 <script>
-var SPELL_DATA = ["Attack","Attack","Defense","Defense","Icon","Icon"];
+var SPELL_DATA = ["Attack","Attack.","Defense","Defense.","Icon","Icon."];
 var stones = [];
 
 function resetStones() {
@@ -29,7 +597,68 @@ function nextSpell() {
     if (stones.length <= 1) {
         resetStones();
     }
-    document.getElementById("spellType").innerHTML = stones.pop();
+    var type = stones.pop();
+    document.getElementById("spellType").innerHTML = type;
+    displaySpells(type);
+}
+
+function displaySpells(type) {
+    if (type.includes("Attack")) {
+        document.getElementById("attack").style.display = "block";
+        document.getElementById("defense").style.display = "none";
+        document.getElementById("icon").style.display = "none";
+        document.getElementById("randIcon").style.display = "none";
+    } else if (type.includes("Defense")) {
+        document.getElementById("attack").style.display = "none";
+        document.getElementById("defense").style.display = "block";
+        document.getElementById("icon").style.display = "none";
+        document.getElementById("randIcon").style.display = "none";
+    } else {
+        document.getElementById("attack").style.display = "none";
+        document.getElementById("defense").style.display = "none";
+        document.getElementById("icon").style.display = "block";
+        
+        var icon;
+        switch (Math.floor((Math.random() * 12) + 1)) {
+            case 1:
+                icon = "Archmage";
+                break;
+            case 2:
+                icon = "Crusader";
+                break;
+            case 3:
+                icon = "Diabolist";
+                break;
+            case 4:
+                icon = "Dwarf King";
+                break;
+            case 5:
+                icon = "Elf Queen";
+                break;
+            case 6:
+                icon = "Great Gold Wyrm";
+                break;
+            case 7:
+                icon = "High Druid";
+                break;
+            case 8:
+                icon = "Lich King";
+                break;
+            case 9:
+                icon = "Orc Lord";
+                break;
+            case 10:
+                icon = "Priestess";
+                break;
+            case 11:
+                icon = "Prince of Shadows";
+                break;
+            case 12:
+                icon = "The Three";
+        }
+        document.getElementById("randIcon").innerHTML = "Random Icon: " + icon;
+        document.getElementById("randIcon").style.display = "block";
+    }
 }
 </script>
 
