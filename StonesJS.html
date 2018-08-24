@@ -124,6 +124,7 @@ that lasts as long as the temporary hit points do.<br><br>
 
 <section id="icon" style="display:none">
 
+<section id="archmage" style="display:none">
 <h3>Archmage (Light of the High Ones)</h3>
 
 <h4>Silver Arrows (1st level+)</h4>
@@ -155,7 +156,9 @@ damage, roll the escalation die and use the new result.<br><br>
 7th level spell&emsp;&emsp;Damage equal to 2d6 x the escalation die.<br>
 9th level spell&emsp;&emsp;Damage equal to 2d12 x the escalation die.<br><br>
 </p>
+</section>
 
+<section id="crusader" style="display:none">
 <h3>Crusader (Blood of Warriors)</h3>
 
 <h4>Castigation (1st level+)</h4>
@@ -188,7 +191,9 @@ attack, it takes 3d6 + Charisma damage.<br><br>
 7th level spell&emsp;&emsp;5d8 damage.<br>
 9th level spell&emsp;&emsp;7d10 damage.<br><br>
 </p>
+</section>
 
+<section id="diabolist" style="display:none">
 <h3>Diabolist (Twisted Path)</h3>
 
 <h4>Tortured Scream (1st level+)</h4>
@@ -226,7 +231,9 @@ must have a positive or conflicted relationship with a villainous icon<br>
 each save ends effect affecting it. Then the target can heal using a recovery
 from a nearby ally (target’s choice, even if that ally isn’t willing).<br><br>
 </p>
+</section>
 
+<section id="dwarf" style="display:none">
 <h3>Dwarf King (Blood of Warriors)</h3>
 
 <h4>Yours! (1 st level+)</h4>
@@ -255,7 +262,9 @@ Unless you or the target is a dwarf, randomly choose one of the target’s true
 magic items. You actively gain that item’s quirk until the end of the day.<br>
 <br>
 </p>
+</section>
 
+<section id="elf" style="display:none">
 <h3>Elf Queen (Light of the High Ones)</h3>
 
 <h4>Shards of Magic (1st level+)</h4>
@@ -300,7 +309,9 @@ you can make the attack against that enemy.<br>
 even roll with a coronation attack, you can have the target become confused
 (save ends) instead of taking damage.<br><br>
 </p>
+</section>
 
+<section id="wyrm" style="display:none">
 <h3>Great Gold Wyrm (Blood of Warriors)</h3>
 
 <h4>Fiery Claw (1st level+)</h4>
@@ -340,7 +351,9 @@ half damage on a miss.<br>
 <span style="font-weight:bold">&ensp;Epic Feat:</span> This spell now targets
 2d3 enemies in a group.<br><br>
 </p>
+</section>
 
+<section id="druid" style="display:none">
 <h3>High Druid (Light of the High Ones)</h3>
 
 <h4>Bolt and Thunder (1st level+)</h4>
@@ -371,7 +384,9 @@ the resources you’ve expended.)<br><br>
 7th level spell&emsp;&emsp;2d6 x the number of recoveries.<br>
 9th level spell&emsp;&emsp;2d10 x the number of recoveries.<br><br>
 </p>
+</section>
 
+<section id="lich" style="display:none">
 <h3>Lich King (Twisted Path)</h3>
 
 <h4>Evil Touch (1st level+)</h4>
@@ -423,7 +438,9 @@ of undead mooks that is one level lower.<br>
 <span style="font-weight:bold">&ensp;Epic Feat:</span> You don’t expend the
 spell when you miss with it.<br><br>
 </p>
+</section>
 
+<section id="orc" style="display:none">
 <h3>Orc Lord (Blood of Warriors)</h3>
 
 <h4>War Drums (1st level+)</h4>
@@ -464,7 +481,9 @@ dice increase by one size (for example, d10s to d12s).<br>
 non-mook creatures to 0 hp with this spell, you can heal using a free recovery.
 <br><br>
 </p>
+</section>
 
+<section id="priestess" style="display:none">
 <h3>Priestess (Light of the High Ones)</h3>
 
 <h4>Holy Spark (1st level+)</h4>
@@ -504,7 +523,9 @@ free.<br>
 <span style="font-weight:bold">&ensp;Epic Feat:</span> Add 50 hp to the hit
 point threshold for targets that can be affected.<br><br>
 </p>
+</section>
 
+<section id="prince" style="display:none">
 <h3>Prince of Shadows (Twisted Path)</h3>
 
 <h4>Shadow Dance (1st level+)</h4>
@@ -541,7 +562,9 @@ spell this turn.<br><br>
 <span style="font-weight:bold">&ensp;Epic Feat:</span> If you roll 6+, you gain
 both effects.<br><br>
 </p>
+</section>
 
+<section id="three" style="display:none">
 <h3>The Three (Twisted Path)</h3>
 
 <h4>Twisted beam (1st level+)</h4>
@@ -574,6 +597,7 @@ subsequent saves are normal.<br><br>
 have flight while the escalation die is even. While the escalation die is odd,
 you can cast twisted beam once during your turn as a quick action.<br><br>
 </p>
+</section>
 
 </section>
 
@@ -622,39 +646,183 @@ function displaySpells(type) {
         switch (Math.floor((Math.random() * 12) + 1)) {
             case 1:
                 icon = "Archmage";
+                document.getElementById("archmage").style.display = "block";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 2:
                 icon = "Crusader";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "block";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 3:
                 icon = "Diabolist";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "block";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 4:
                 icon = "Dwarf King";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "block";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 5:
                 icon = "Elf Queen";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "block";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 6:
                 icon = "Great Gold Wyrm";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "block";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 7:
                 icon = "High Druid";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "block";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 8:
                 icon = "Lich King";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "block";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 9:
                 icon = "Orc Lord";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "block";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 10:
                 icon = "Priestess";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "block";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "none";
                 break;
             case 11:
                 icon = "Prince of Shadows";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "block";
+                document.getElementById("three").style.display = "none";
                 break;
             case 12:
                 icon = "The Three";
+                document.getElementById("archmage").style.display = "none";
+                document.getElementById("crusader").style.display = "none";
+                document.getElementById("diabolist").style.display = "none";
+                document.getElementById("dwarf").style.display = "none";
+                document.getElementById("elf").style.display = "none";
+                document.getElementById("wyrm").style.display = "none";
+                document.getElementById("druid").style.display = "none";
+                document.getElementById("lich").style.display = "none";
+                document.getElementById("orc").style.display = "none";
+                document.getElementById("priestess").style.display = "none";
+                document.getElementById("prince").style.display = "none";
+                document.getElementById("three").style.display = "block";
         }
         document.getElementById("randIcon").innerHTML = "Random Icon: " + icon;
         document.getElementById("randIcon").style.display = "block";
